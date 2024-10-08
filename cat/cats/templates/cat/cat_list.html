@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список котов</title>
+</head>
+<body>
+    <ul>
+        {% for cat in cats %}
+        <li><a href="{% url 'edit_cat' cat.id %}">{{ cat.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

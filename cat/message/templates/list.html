@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Messages</title>
+</head>
+<body>
+    <h1>Ваши сообщения</h1>
+    <ul>
+        {% for message in messages %}
+        <li>
+            <strong>{{ message.sender.username }}</strong>: {{ message.message|linebreaksbr }}
+        </li>
+        {% empty %}
+        <li>Нет сообщений.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

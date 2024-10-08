@@ -1,0 +1,6 @@
+asgiref
+channels
+Django
+pip
+sqlparse
+tzdata

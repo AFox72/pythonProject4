@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Подтверждение удаления кота</title>
+</head>
+<body>
+    <form method="post" action=".">
+        {% csrf_token %}
+        <p>Вы уверены, что хотите удалить кота "{{ cat.name }}"?</p>
+        <input type="submit" value="Да, удалить">
+    </form>
+</body>
+</html>
