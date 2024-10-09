@@ -19,7 +19,7 @@ def cat_list(request):
 
 def create_cat(request):
     if request.method == 'POST':
-        form = CatForm(request.POST)
+        form = CatForm(request.POST, instance=None)
         if form.is_valid():
             new_cat = form.save(commit=False)
             new_cat.owner = request.user

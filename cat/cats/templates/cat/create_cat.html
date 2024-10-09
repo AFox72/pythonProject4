@@ -5,10 +5,22 @@
     <title>Создание кота</title>
 </head>
 <body>
-    <form method="post" action=".">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Сохранить">
-    </form>
+    <form method="post">
+    {% csrf_token %}
+    <label for="name">Имя</label>
+    <input type="text" id="name" name="name" required><br>
+    <label for="age">Возраст</label>
+    <input type="number" id="age" name="age" required><br>
+    <label for="breed">Порода</label>
+    <input type="text" id="breed" name="breed" required><br>
+    <label for="hair_style">Стиль шерсти</label>
+    <select id="hair_style" name="hair_style">
+        <option value="">Выберите стиль шерсти</option>
+        {% for choice in form.hair_style.field.choices %}
+            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+        {% endfor %}
+    </select><br>
+    <button type="submit">Создать</button>
+</form>
 </body>
 </html>

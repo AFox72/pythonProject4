@@ -7,6 +7,4 @@ class Cat(models.Model):
     age = models.IntegerField()
     breed = models.CharField(max_length=50)
     hair_type = models.CharField(max_length=20)
-
-
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
